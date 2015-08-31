@@ -1,0 +1,68 @@
+Standard Attributes
+Attributed strings support the following standard attributes for text. If the key is not in the dictionary, then use the default values described below.
+
++ NSFontAttributeName               NSFont            Default Helvetica 12-point
+
+- NSUnderlineStyleAttributeName     NSNumber (int)    Default 0, no underline. See “Underlining Patterns”, “Underlining Styles”, and “Underline Masks” for mask values.
+- NSSuperscriptAttributeName        NSNumber (int)    Default 0
+- NSLigatureAttributeName           NSNumber (int)    Default 1, standard ligatures; 0, no ligatures; 2, all ligatures
+- NSBaselineOffsetAttributeName     NSNumber (float)  Default 0.0, points offset from baseline
+- NSKernAttributeName               NSNumber (float)  Default nil, use default kerning specified in font file; 0.0, kerning off; non-zero, points by which to modify default kerning
+- NSStrokeWidthAttributeName        NSNumber (real)   as percent of font point size, Default 0, no stroke; positive, stroke alone; negative, stroke and fill (typical for outlined text would be 3.0)
+- NSStrikethroughStyleAttributeName NSNumber (int)    Default 0, no strikethrough. See “Underlining Patterns”, “Underlining Styles”, and “Underline Masks” for mask values.
+- NSObliquenessAttributeName        NSNumber (float)  as skew to be applied to glyphs, Default 0.0, no skew
+- NSExpansionAttributeName          NSNumber (float)  as log of expansion factor to be applied to glyphs, Default 0.0, no expansion
+
+- NSLinkAttributeName               NSURL or NSString Default nil, no link
+- NSToolTipAttributeName            NSString          Default nil, no tooltip
+
++ NSForegroundColorAttributeName    NSColor           Default blackColor
++ NSBackgroundColorAttributeName    NSColor           Default nil, no background
++ NSStrokeColorAttributeName        NSColor           Default nil, same as foreground color
++ NSUnderlineColorAttributeName     NSColor           Default nil, same as foreground color
++ NSStrikethroughColorAttributeName NSColor           Default nil, same as foreground color
+
++ NSShadowAttributeName             NSShadow          Default nil, no shadow
+
+
++ NSParagraphStyleAttributeName     NSParagraphStyle  Default as returned by the NSParagraphStyle method defaultParagraphStyle
+      Subattribute        Default Value
+      Alignment           NSNaturalTextAlignment
+      Tab stops           12 left-aligned tabs, spaced by 28.0 points
+      Line break mode     NSLineBreakByWordWrapping
+      All others          0.0
+
+      - alignment NSTextAlignment     Sets the alignment of the receiver to alignment.
+                    NSLeftTextAlignment      = 0,
+                    NSRightTextAlignment     = 1,
+                    NSCenterTextAlignment    = 2,
+                    NSJustifiedTextAlignment = 3,
+                    NSNaturalTextAlignment   = 4
+
+      - lineBreakMode NSLineBreakMode     Sets the mode used to break lines in a layout container to mode.
+                    NSLineBreakByWordWrapping = 0,
+                    NSLineBreakByCharWrapping,
+                    NSLineBreakByClipping,
+                    NSLineBreakByTruncatingHead,
+                    NSLineBreakByTruncatingTail,
+                    NSLineBreakByTruncatingMiddle
+
+      - baseWritingDirection NSWritingDirection  Sets the base writing direction for the receiver.
+                    NSWritingDirectionNatural     = -1,
+                    NSWritingDirectionLeftToRight = 0,
+                    NSWritingDirectionRightToLeft
+
+      - tabStops                      NSArray             Replaces the tab stops in the receiver with tabStops.
+      - defaultTabInterval            >= 0.0  Sets the default tab interval for the receiver.
+
+      - firstLineHeadIndent           >= 0.0  Sets the distance in points from the leading margin of a text container to the beginning of the paragraph’s first line to aFloat.
+      - headIndent                    >= 0.0  Sets the distance in points from the leading margin of a text container to the beginning of lines other than the first to aFloat.
+      - tailIndent                    Float   Sets the distance in points from the margin of a text container to the end of lines to aFloat. > 0.0 from left margin, <= 0.0 from right margin
+      - maximumLineHeight             >= 0.0  Sets the maximum height that any line in the paragraph style will occupy, regardless of the font size or size of any attached graphic, to aFloat. = 0.0 no limit
+      - minimumLineHeight             >= 0.0  Sets the minimum height that any line in the paragraph style will occupy, regardless of the font size or size of any attached graphic, to aFloat.
+      - lineSpacing                   >= 0.0  Sets the distance in points added between lines within the paragraph to aFloat.
+      - paragraphSpacing              >= 0.0  Sets the space added at the end of the paragraph to separate it from the following paragraph to aFloat.
+      - paragraphSpacingBefore        >= 0.0  Sets the distance between the paragraph’s top and the beginning of its text content
+      - lineHeightMultiple            >= 0.0  Sets the line height multiple for the receiver.
+      - hyphenationFactor             0.0-1.0 Specifies the paragraph’s threshold for hyphenation.
+      - tighteningFactorForTruncation Float   Specifies the threshold for using tightening as an alternative to truncation.
